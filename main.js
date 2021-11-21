@@ -20,11 +20,12 @@ function init() {
   controls = new OrbitControls(camera, renderer.domElement);
 
   //平行光源を追加してみよう
-  let directionalLight = new THREE.DirectionalLight(0xffffff, 5);
+  let directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+  directionalLight.position.set(1, 1, 1);
   scene.add(directionalLight);
 
-  let helper = new THREE.DirectionalLightHelper(directionalLight, 205);
-  scene.add(helper);
+  // let helper = new THREE.DirectionalLightHelper(directionalLight, 205);
+  // scene.add(helper);
 
   //ポイント光源を追加してみよう。
   pointlight = new THREE.PointLight(0xffffff, 1);

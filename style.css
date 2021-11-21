@@ -2,6 +2,8 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(#381717, #000000);
   overflow: hidden;
+  background-image: url("./textures/space.jpg");
+  background-position: center;
+  background-size: cover;
 }
