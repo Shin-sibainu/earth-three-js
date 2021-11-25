@@ -44,7 +44,19 @@ function init() {
   let ballMesh = new THREE.Mesh(ballGeo, ballMet);
   scene.add(ballMesh);
 
+  window.addEventListener("resize", onWindowResize);
+
   animate();
+}
+
+//ブラウザのリサイズに対応させよう
+function onWindowResize() {
+  //レンダラーのサイズを随時更新
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  //カメラのアスペクト比を正す
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
 }
 
 function animate() {
